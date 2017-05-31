@@ -24,6 +24,16 @@ class ViewController: UIViewController {
     func configureTableView() {
         tableview.dataSource = self
         // TODO
+        tableview.estimatedRowHeight = 100
+        tableview.rowHeight = UITableViewAutomaticDimension
+        tableview.register(BookTableViewCell.self, forCellReuseIdentifier: bookCellReuseIdentifier)
+        
+        view.addSubview(tableview)
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        tableview.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableview.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableview.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableview.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 
 }
